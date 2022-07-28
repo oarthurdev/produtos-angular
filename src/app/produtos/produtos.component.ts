@@ -10,6 +10,7 @@ export class ProdutosComponent implements OnInit {
   displayedColumns: string[] = [ 'nome', 'quant', 'cat_id', 'acao'];
   dataSource: Produto[];
   isLoadingResults = true;
+  categoria: any = [];
   constructor( private _api: ApiService) { }
 
   ngOnInit() {

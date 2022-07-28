@@ -50,18 +50,10 @@ export class ApiService {
     );
   }
 
-  getCategoryName(id: number): Observable<Produto> {
-    const url = `${apiUrl}/category/${id}`;
-    return this.http.get<Produto>(url).pipe(
-      tap(_ => console.log(`leu a categoria id=${id}`)),
-      catchError(this.handleError<Produto>(`getCategoryName id=${id}`))
-    );
-  }
-
   updateProduto(id, produto): Observable<any> {
     const url = `${apiUrl}/produto/${id}`;
     return this.http.put(url, produto, httpOptions).pipe(
-      tap(_ => console.log(`atualiza o produco com id=`)),
+      tap(_ => alert('Alterou o produto ' + produto.name)),
       catchError(this.handleError<any>('updateProduto'))
     );
   }
